@@ -8,6 +8,7 @@ interface ContactInterface {
 	function getId();
 	function getCustomer();
 	function getRecipient();
+	function getDetails();
 
 	function isPreferredEmail();
 	function isPreferredCall();
