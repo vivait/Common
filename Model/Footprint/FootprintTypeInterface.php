@@ -7,7 +7,7 @@ use Vivait\Common\Model\Poly\PolymorphicInterface;
 // TODO: Change me to an interface
 use Vivait\FootprintBundle\Entity\Footprint;
 
-interface FootprintTypeInterface extends PolymorphicInterface {
+interface FootprintTypeInterface extends PolymorphicInterface, \JsonSerializable {
 	public function getId();
 	public function getRoute();
 	public function getRouteParams();
@@ -42,4 +42,6 @@ interface FootprintTypeInterface extends PolymorphicInterface {
 	 * @return FootprintTypeInterface
 	 */
 	public static function generatePolyObject($poly_alias);
+
+	public function getMergeFields();
 }

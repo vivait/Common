@@ -19,4 +19,6 @@ interface FootprintTypeRepositoryInterface {
 	public function getEmailFromContact($entity, $contact);
 	public function getMobileFromContact($entity, $contact);
 	public function getAddressFromContact($entity, $contact);
+
+	public function getByForeignId($entity_id);
 }
