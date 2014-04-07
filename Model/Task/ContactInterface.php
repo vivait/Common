@@ -9,8 +9,4 @@ interface ContactInterface {
 	function getCustomer();
 	function getRecipient();
 	function getDetails();
-
-	function isPreferredEmail();
-	function isPreferredCall();
-	function isPreferredText();
 }
