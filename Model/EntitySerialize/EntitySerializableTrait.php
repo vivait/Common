@@ -1,7 +1,7 @@
 <?php
 
 
-namespace common\Vivait\Common\Model\EntitySerialize;
+namespace Vivait\Common\Model\EntitySerialize;
 
 use Doctrine\Common\Collections\Collection;
 
