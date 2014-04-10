@@ -10,7 +10,10 @@ use Doctrine\Common\Collections\Collection;
  */
 trait EntitySerializableTrait {
 	protected function serializeEntity($var) {
-		if ($var instanceOf Collection) {
+		if (!is_object($var)) {
+			return $var;
+		}
+		else if ($var instanceOf Collection) {
 			return array_map(array($this, 'serializeEntity'), $var->toArray());
 		}
 		else if ($var instanceOf EntitySerializable) {
