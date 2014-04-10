@@ -1,6 +1,7 @@
 <?php
 namespace Vivait\Common\Model\Footprint;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Viva\BravoBundle\Entity\Customer;
 
 interface FootprintTypeRepositoryInterface {
@@ -21,4 +22,11 @@ interface FootprintTypeRepositoryInterface {
 	public function getAddressFromContact($entity, $contact);
 
 	public function getByForeignId($entity_id);
+
+	/**
+	 * @param $entity_ids
+	 * @param $since
+	 * @return ArrayCollection|FootprintTypeInterface[]
+	 */
+	public function getByForeignIds($entity_ids, $since = null);
 }
