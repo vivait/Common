@@ -3,6 +3,7 @@
 namespace Vivait\Common\Event;
 
 use Symfony\Component\EventDispatcher\Event;
+use Viva\AuthBundle\Model\NullUser;
 
 abstract class EntityEvent extends Event {
 	const EVENT_ENTITY_CREATED  = 'vivait.entity.created';
@@ -15,14 +16,14 @@ abstract class EntityEvent extends Event {
 	protected $entity;
 
 	/**
-	 * @var bool
+	 * @var object
 	 */
-	protected $is_new = false;
+	protected $user;
 
-	public function __construct($entity, $is_new = false)
+	public function __construct($entity, $user = null)
 	{
 		$this->entity = $entity;
-		$this->is_new = $is_new;
+		$this->user   = $user ?: new NullUser();
 	}
 
 	/**
@@ -33,13 +34,13 @@ abstract class EntityEvent extends Event {
 		return $this->entity;
 	}
 
-	public abstract function getEntityName();
-
 	/**
-	 * Is the entity new?
-	 * @return boolean
+	 * Gets user
+	 * @return object
 	 */
-	public function isNew() {
-		return $this->is_new;
+	public function getUser() {
+		return $this->user;
 	}
+
+	public abstract function getEntityName();
 } 
