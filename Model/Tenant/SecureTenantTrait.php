@@ -7,6 +7,7 @@ namespace Vivait\Common\Model\Tenant;
 use Doctrine\DBAL\LockMode;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @mixin EntityRepository
@@ -58,5 +59,15 @@ trait SecureTenantTrait {
 		catch (NoResultException $e) {
 			return false;
 		}
+	}
+
+	public function buildTenantQuery(QueryBuilder $query, $table_alias) {
+		$query
+			// Join on the queue and the tenants
+			->leftJoin($table_alias .'.queue', $table_alias .'q')
+			->leftJoin($table_alias .'q.tenants', ($tenant_alias = $table_alias .'t'))
+		;
+
+		return $tenant_alias;
 	}
 }
