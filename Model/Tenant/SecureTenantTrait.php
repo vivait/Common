@@ -46,7 +46,7 @@ trait SecureTenantTrait {
 
 		$qb
 			->andWhere('c.id = :id')
-			->andWhere($qb->expr()->in($tenant_alias .'t.id', $tenant_ids))
+			->andWhere($qb->expr()->in($tenant_alias .'.id', $tenant_ids))
 			->setParameter('id', $id)
 		;
 
