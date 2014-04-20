@@ -2,7 +2,9 @@
 
 namespace Vivait\Common\Event;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\EventDispatcher\Event;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Viva\AuthBundle\Model\NullUser;
 
 abstract class EntityEvent extends Event {
@@ -20,7 +22,21 @@ abstract class EntityEvent extends Event {
 	 */
 	protected $user;
 
-	public function __construct($entity, $user = null)
+	/**
+	 * @param array|ArrayCollection $array
+	 * @param UserInterface $user
+	 * @return EntityEvent[]
+	 */
+	public static function createFromArray($array, UserInterface $user) {
+		$events = [];
+		foreach ($array as $row) {
+			$events[] = new static($row, $user);
+		}
+
+		return $events;
+	}
+
+	public function __construct($entity, UserInterface $user = null)
 	{
 		$this->entity = $entity;
 		$this->user   = $user ?: new NullUser();
