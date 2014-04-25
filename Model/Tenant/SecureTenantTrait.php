@@ -34,6 +34,20 @@ trait SecureTenantTrait {
 	}
 
 	/**
+	 * Used in place of findBy to return objects that have been tenanted
+	 * @param array $tenant_ids
+	 * @param array $criteria
+	 * @param array $orderBy
+	 * @param null  $limit
+	 * @param null  $offset
+	 * @return mixed
+	 */
+	public function findSafeBy(array $tenant_ids, array $criteria, array $orderBy = null, $limit = null, $offset = null) {
+		$criteria = array_merge($criteria,['tenants'=>$tenant_ids]);
+		return parent::findBy($criteria, $orderBy, $limit, $offset);
+	}
+
+	/**
 	 * @param $id
 	 * @param $tenant_ids
 	 * @return bool|mixed
