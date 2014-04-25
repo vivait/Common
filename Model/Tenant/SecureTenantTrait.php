@@ -50,7 +50,7 @@ trait SecureTenantTrait {
 	/**
 	 * @param $id
 	 * @param $tenant_ids
-	 * @return bool|mixed
+	 * @return null|object
 	 * @throws \Doctrine\ORM\NonUniqueResultException
 	 */
 	public function findSafe($id, $tenant_ids) {
@@ -71,7 +71,7 @@ trait SecureTenantTrait {
 				;
 		}
 		catch (NoResultException $e) {
-			return false;
+			return null;
 		}
 	}
 
