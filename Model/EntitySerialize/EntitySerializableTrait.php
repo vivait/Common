@@ -23,7 +23,7 @@ trait EntitySerializableTrait {
 			return $var->jsonSerialize();
 		}
 		else {
-			throw new CannotSerializeClassException();
+			throw new CannotSerializeClassException(sprintf("Cannot serialize class '%s'", get_class($var)));
 		}
 	}
 
