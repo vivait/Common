@@ -14,22 +14,22 @@ use Doctrine\ORM\QueryBuilder;
  */
 trait SecureTenantTrait {
 	public function find($id, $lockMode = LockMode::NONE, $lockVersion = null) {
-		trigger_error('Attempting to use find on a tenanted repository, this is unsafe', E_USER_WARNING);
+		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
 		return parent::find($id, $lockMode, $lockVersion);
 	}
 
 	public function findAll() {
-		trigger_error('Attempting to use findAll on a tenanted repository, this is unsafe', E_USER_WARNING);
+		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
 		return parent::findAll();
 	}
 
 	public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) {
-		trigger_error('Attempting to use findBy on a tenanted repository, this is unsafe', E_USER_WARNING);
+		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
 		return parent::findBy($criteria, $orderBy, $limit, $offset);
 	}
 
 	public function findOneBy(array $criteria, array $orderBy = null) {
-		trigger_error('Attempting to use findOneBy on a tenanted repository, this is unsafe', E_USER_WARNING);
+		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
 		return parent::findOneBy($criteria, $orderBy);
 	}
 
