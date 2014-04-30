@@ -9,7 +9,12 @@ use Doctrine\Common\Collections\Collection;
  * @mixin EntitySerializable
  */
 trait EntitySerializableTrait {
-	protected function serializeEntity($var) {
+    /**
+     * @param $var
+     * @return string|array
+     * @throws CannotSerializeClassException
+     */
+    protected function serializeEntity($var) {
 		if (!is_object($var)) {
 			return $var;
 		}
@@ -22,9 +27,7 @@ trait EntitySerializableTrait {
 		else if ($var instanceOf \JsonSerializable) {
 			return $var->jsonSerialize();
 		}
-		else {
-			throw new CannotSerializeClassException(sprintf("Cannot serialize class '%s'", get_class($var)));
-		}
+        throw new CannotSerializeClassException(sprintf("Cannot serialize class '%s'", get_class($var)));
 	}
 
 	/**
