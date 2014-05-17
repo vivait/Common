@@ -7,4 +7,6 @@ interface UserInterface {
 	function getEmail();
 	function getFullname();
 	function getGravatar();
+  function getAllowedTenants();
+    public function getCurrentTenant();
 }

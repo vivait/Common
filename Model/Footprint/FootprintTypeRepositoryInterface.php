@@ -23,10 +23,11 @@ interface FootprintTypeRepositoryInterface {
 
 	public function getByForeignId($entity_id);
 
-	/**
-	 * @param $entity_ids
-	 * @param $since
-	 * @return ArrayCollection|FootprintTypeInterface[]
-	 */
-	public function getByForeignIds($entity_ids, $since = null);
+    /**
+     * @param $entity_ids
+     * @param $since
+     * @param UserInterface $user
+     * @return ArrayCollection|FootprintTypeInterface[]
+     */
+	public function getByForeignIds($entity_ids, $since = null, UserInterface $user = null);
 }
