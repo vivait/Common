@@ -9,4 +9,5 @@ interface UserInterface {
 	function getGravatar();
   function getAllowedTenants();
     public function getCurrentTenant();
+    public function __toString();
 }
