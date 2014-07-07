@@ -6,7 +6,6 @@ use Vivait\Common\Exception\Poly\PolymorphicTypeException;
 
 /**
  * Class PolymorphicTrait
- * @mixin PolymorphicInterface
  * @package Vivait\BootstrapBundle\Model
  */
 trait PolymorphicTrait {
