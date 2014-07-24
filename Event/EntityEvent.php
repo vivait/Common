@@ -61,12 +61,12 @@ abstract class EntityEvent extends Event implements EntityEventInterface
         return $this->user;
     }
 
-    public function provides()
-    {
-        return [$this->entity];
-    }
-
-    public static function getEvents()
+    /**
+     * Provides an associative array of event name => event label
+     * for us when building an inspection
+     * @return array
+     */
+    public static function supportsEvents()
     {
         return [
           static::EVENT_ENTITY_CREATED  => static::getEntityTypeLabel() . ' created',
@@ -74,4 +74,4 @@ abstract class EntityEvent extends Event implements EntityEventInterface
           static::EVENT_ENTITY_DELETED  => static::getEntityTypeLabel() . ' deleted',
         ];
     }
-} 
+}

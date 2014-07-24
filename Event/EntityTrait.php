@@ -7,7 +7,7 @@ use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Viva\AuthBundle\Model\NullUser;
 
-trait FootprintableTrait
+trait EntityTrait
 {
     /**
      * @var object
