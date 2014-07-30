@@ -2,32 +2,24 @@
 namespace Vivait\Common\Model\Footprint;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Query\Expr\Composite;
+use Doctrine\ORM\QueryBuilder;
 use Viva\BravoBundle\Entity\Customer;
 
-interface FootprintTypeRepositoryInterface {
-	/**
-	 * @param integer $id
-	 * @throws \InvalidArgumentException
-	 * @return Customer
-	 */
-	public function loadForeignEntity($id);
-
-	public function getContacts($entity);
-	public function getMobileContacts($entity);
-	public function getEmailContacts($entity);
-	public function getAddressContacts($entity);
-
-	public function getEmailFromContact($entity, $contact);
-	public function getMobileFromContact($entity, $contact);
-	public function getAddressFromContact($entity, $contact);
-
-	public function getByForeignId($entity_id);
+interface FootprintTypeRepositoryInterface
+{
+    /**
+     * @param integer $id
+     * @throws \InvalidArgumentException
+     * @return Customer
+     */
+    public function loadForeignEntity($id);
 
     /**
-     * @param $entity_ids
-     * @param $since
-     * @param UserInterface $user
-     * @return ArrayCollection|FootprintTypeInterface[]
+     * @param array        $foreignIds    A nested array containing a map of footprint types and their foreign ids: footprint_type => [foreign_ids]
+     * @return array
      */
-	public function getByForeignIds($entity_ids, $since = null, UserInterface $user = null);
+    public function getByForeignIds(
+      array $foreignIds
+    );
 }

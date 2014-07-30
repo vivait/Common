@@ -9,4 +9,7 @@ interface LetterInterface {
 	function getName();
 	function getId();
     function isEnabled();
+    function getCopies();
+    function getFullName();
+    function getPriority();
 }
