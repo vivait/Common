@@ -1,14 +1,15 @@
 {
 	"name": "vivait/common",
 	"description": "Common interfaces used for Viva IT bundles",
-	"license": "proprietary",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Lewis Wright",
 			"email": "lewis@vivait.co.uk"
 		}
 	],
-	"minimum-stability": "stable",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
 	"require": {
 
 	},
