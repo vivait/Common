@@ -2,6 +2,6 @@
 
 namespace Vivait\Common\Model\Task;
 
-interface TaskInterface {
-
-} 
+interface TaskInterface
+{
+}

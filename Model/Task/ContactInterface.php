@@ -2,9 +2,10 @@
 
 namespace Vivait\Common\Model\Task;
 
-interface ContactInterface {
-	function getId();
-	function getCustomer();
-	function getRecipient();
-	function getDetails();
+interface ContactInterface
+{
+    public function getId();
+    public function getCustomer();
+    public function getRecipient();
+    public function getDetails();
 }

@@ -1,38 +1,37 @@
 <?php
 
-
 namespace Vivait\Common\Model\Footprint;
 
-use Vivait\Common\Model\Poly\PolymorphicInterface;
 // TODO: Change me to an interface
 use Vivait\FootprintBundle\Entity\Footprint;
 
-interface FootprintTypeInterface extends \JsonSerializable {
-	public function getId();
-	public function getRoute();
-	public function getRouteParams();
+interface FootprintTypeInterface extends \JsonSerializable
+{
+    public function getId();
+    public function getRoute();
+    public function getRouteParams();
 
     /**
      * @param Footprint $footprint
      * @param bool      $cascade
      * @return
      */
-	public function setFootprint(Footprint $footprint, $cascade = true);
+    public function setFootprint(Footprint $footprint, $cascade = true);
 
-	/**
+    /**
 	 * @return Footprint
 	 */
-	public function getFootprint();
+    public function getFootprint();
 
-	/**
+    /**
 	 * @return object
 	 */
-	public function getForeignEntity();
+    public function getForeignEntity();
 
-	/**
+    /**
 	 * @param object $entityId
 	 */
-	public function setForeignEntity($entityId);
+    public function setForeignEntity($entityId);
 
     /**
      * Returns a unique service/form alias to be used for business logic and form generation.
@@ -53,5 +52,5 @@ interface FootprintTypeInterface extends \JsonSerializable {
      */
     public function getPolyDescription();
 
-	public function getMergeFields();
+    public function getMergeFields();
 }

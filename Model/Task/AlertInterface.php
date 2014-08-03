@@ -2,7 +2,8 @@
 
 namespace Vivait\Common\Model\Task;
 
-interface AlertInterface {
-	function getId();
-	function getTask();
-} 
+interface AlertInterface
+{
+    public function getId();
+    public function getTask();
+}

@@ -2,7 +2,6 @@
 
 namespace Vivait\Common\Event;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Viva\AuthBundle\Model\NullUser;
