@@ -2,6 +2,6 @@
 
 namespace Vivait\Common\Model\EntitySerialize;
 
-class CannotSerializeClassException extends \Exception {
-
-} 
+class CannotSerializeClassException extends \Exception
+{
+}

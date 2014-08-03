@@ -2,6 +2,7 @@
 
 namespace Vivait\Common\Credit;
 
-interface Applicant {
-	public function getId();
+interface Applicant
+{
+    public function getId();
 }

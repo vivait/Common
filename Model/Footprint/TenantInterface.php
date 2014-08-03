@@ -2,7 +2,8 @@
 
 namespace Vivait\Common\Model\Footprint;
 
-interface TenantInterface {
-	function getId();
+interface TenantInterface
+{
+    public function getId();
     public function __toString();
 }

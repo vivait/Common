@@ -2,12 +2,13 @@
 
 namespace Vivait\Common\Model\Footprint;
 
-interface UserInterface {
-	function getId();
-	function getEmail();
-	function getFullname();
-	function getGravatar();
-  function getAllowedTenants();
+interface UserInterface
+{
+    public function getId();
+    public function getEmail();
+    public function getFullname();
+    public function getGravatar();
+  public function getAllowedTenants();
     public function getCurrentTenant();
     public function __toString();
 }

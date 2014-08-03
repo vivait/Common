@@ -2,7 +2,8 @@
 
 namespace Vivait\Common\Model\Task;
 
-interface WorkflowInstanceInterface {
-	function getId();
-	function getTask();
-} 
+interface WorkflowInstanceInterface
+{
+    public function getId();
+    public function getTask();
+}

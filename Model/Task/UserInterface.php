@@ -2,9 +2,10 @@
 
 namespace Vivait\Common\Model\Task;
 
-interface UserInterface {
-	function getId();
-	function getFullname();
-	function getGravatar();
-	function getEmail();
+interface UserInterface
+{
+    public function getId();
+    public function getFullname();
+    public function getGravatar();
+    public function getEmail();
 }

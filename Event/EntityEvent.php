@@ -24,8 +24,8 @@ abstract class EntityEvent extends Event implements EntityEventInterface
     protected $user;
 
     /**
-     * @param array|ArrayCollection $array
-     * @param UserInterface         $user
+     * @param  array|ArrayCollection $array
+     * @param  UserInterface         $user
      * @return EntityEvent[]
      */
     public static function createFromArray($array, UserInterface $user)

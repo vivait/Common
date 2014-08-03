@@ -7,12 +7,13 @@ use Vivait\Common\Container\ServiceEntity;
 
 class LoaderService
 {
-    public function __construct(ContainerInterface $container) {
+    public function __construct(ContainerInterface $container)
+    {
         $this->container = $container;
     }
 
     /**
-     * @param ServiceEntity[] $collection
+     * @param  ServiceEntity[] $collection
      * @return mixed
      */
     public function loadServices($collection)
@@ -26,7 +27,8 @@ class LoaderService
         return $services;
     }
 
-    public function loadService(ServiceEntity $entity) {
+    public function loadService(ServiceEntity $entity)
+    {
         return $entity->loadService($this->container);
     }
 }

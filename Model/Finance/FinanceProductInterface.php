@@ -1,14 +1,13 @@
 <?php
 
-	namespace Vivait\Common\Model\Finance;
+    namespace Vivait\Common\Model\Finance;
 
-	use Doctrine\ORM\Mapping as ORM;
-	use Symfony\Component\Validator\Constraints as Assert;
+    use Doctrine\ORM\Mapping as ORM;
+    use Symfony\Component\Validator\Constraints as Assert;
 
-	interface FinanceProductInterface {
+    interface FinanceProductInterface
+    {
+        public function getId();
+        public function getName();
 
-		public function getId();
-		public function getName();
-
-
-	}
+    }

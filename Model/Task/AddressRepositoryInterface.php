@@ -2,6 +2,7 @@
 
 namespace Vivait\Common\Model\Task;
 
-interface AddressRepositoryInterface {
-	function findByCustomer(CustomerInterface $customer);
+interface AddressRepositoryInterface
+{
+    public function findByCustomer(CustomerInterface $customer);
 }
