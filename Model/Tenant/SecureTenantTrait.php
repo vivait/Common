@@ -13,25 +13,25 @@ use Doctrine\ORM\QueryBuilder;
  * @mixin EntityRepository
  */
 trait SecureTenantTrait {
-	public function find($id, $lockMode = LockMode::NONE, $lockVersion = null) {
-		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
-		return parent::find($id, $lockMode, $lockVersion);
-	}
-
-	public function findAll() {
-		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
-		return parent::findAll();
-	}
-
-	public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) {
-		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
-		return parent::findBy($criteria, $orderBy, $limit, $offset);
-	}
-
-	public function findOneBy(array $criteria, array $orderBy = null) {
-		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
-		return parent::findOneBy($criteria, $orderBy);
-	}
+//	public function find($id, $lockMode = LockMode::NONE, $lockVersion = null) {
+//		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
+//		return parent::find($id, $lockMode, $lockVersion);
+//	}
+//
+//	public function findAll() {
+//		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
+//		return parent::findAll();
+//	}
+//
+//	public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null) {
+//		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
+//		return parent::findBy($criteria, $orderBy, $limit, $offset);
+//	}
+//
+//	public function findOneBy(array $criteria, array $orderBy = null) {
+//		trigger_error(sprintf('Attempting to use %s on tenanted repository "%s", this is unsafe', __FUNCTION__, __CLASS__), E_USER_WARNING);
+//		return parent::findOneBy($criteria, $orderBy);
+//	}
 
 	/**
 	 * Used in place of findBy to return objects that have been tenanted
